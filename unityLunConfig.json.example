@@ -1,0 +1,8 @@
+{
+
+    "ip" : "",
+    "user": "",
+    "password" : "",
+    "luns" : ["Lun1", "Lun2", "Lun3"]
+
+}
