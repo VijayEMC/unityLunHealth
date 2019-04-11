@@ -37,8 +37,13 @@ for lun in luns:
     if response.status_code <= 200:
         content = json.loads(response.content)
         health = content["content"]["health"]
+        #print (health)
         if health["value"] != 5:
             healthy = 0
+    else:
+        healthy = 0
+        sys.stdout.write("%s: LUN Not Found\n" % lun)
+        break
 
 #logout of unisphere
 logout = s.get(logout_url, verify=False)
