@@ -7,7 +7,7 @@ import os.path
 import sys
 
 #return value
-healthy = 1
+healthy = 0
 
 #open and process config file
 if os.path.isfile('unityLunConfig.json'):
@@ -39,9 +39,9 @@ for lun in luns:
         health = content["content"]["health"]
         #print (health)
         if health["value"] != 5:
-            healthy = 0
+            healthy = 1
     else:
-        healthy = 0
+        healthy = 1
         sys.stdout.write("%s: LUN Not Found\n" % lun)
         break
 
